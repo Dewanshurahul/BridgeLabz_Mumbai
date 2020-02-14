@@ -1,3 +1,5 @@
+#Printing the Prime Factors (factor) of the provided integer value (number)
+
 number = int(input("Enter any Number to find Prime Factors: "))
 factor = 2
 while int(number)!=0:

@@ -1,3 +1,4 @@
+#Printing the nth Harmonic Number number based on given Number
 number = int(input("Enter number to find Harmonic Value: "))
 harmonicNumber = 0
 driverVariable = 1
