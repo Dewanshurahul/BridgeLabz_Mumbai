@@ -1,29 +1,34 @@
 class Sets:
 
+    #Return the Empty Set
     def createSet(self):
-        newSet =set({})
-        return newSet
+        return set({})
 
+    # Print every element of the passed Set
     def show(self, setOfElements):
         for values in setOfElements:
             print(values, end=" ")
         print()
 
+    # Add the passed element into the Given Set
     def addElement(self, element, setOfElement):
         setOfElement.add(element)
         return setOfElement
 
+    # Take element(s) and remove from the passed Set if Present
     def removeItems(self, setOfElement, *element):
         for index in range(len(element)):
             if element[index] in setOfElement:
                 setOfElement.remove(element[index])
         return setOfElement
 
+    # Take one element and remove it from the Set if Present
     def removeMember(self, element, setOfElement):
         if element in setOfElement:
             setOfElement.remove(element)
         return setOfElement
 
+    # Return the element which are common in both the Set
     def intersectionOfSets(self, firstSet, secondSet):
         intersectionSet = set({})
         for firstvalues in firstSet:
@@ -32,6 +37,7 @@ class Sets:
                     intersectionSet.add(firstvalues)
         return intersectionSet
 
+    # Return the elemets of both the Sets **UNION(Mathematical)**
     def unionOfSets(self, firstSet, secondSet):
         unionSet = set({})
         for values in firstSet:
@@ -40,6 +46,7 @@ class Sets:
             unionSet.add(values)
         return unionSet
 
+    # Return a new set with elements in the set that are not in the others
     def setDifference(self,firstSet,secondSet):
         differenceSet = set({})
         for firstValues in secondSet:
@@ -66,11 +73,13 @@ class Sets:
     #     pass
 
 
+    # Empty the passed Set
     def clear(self,setOfElement):
         while len(setOfElement) != 0:
             setOfElement.pop()
         return setOfElement
 
+    # Return the minimum element of the Array
     def min(self, setOfElement):
         if len(setOfElement) != 0:
             minimum = setOfElement.pop()
@@ -82,6 +91,7 @@ class Sets:
                 minimum = values
         return minimum
 
+    # Return the Maximum element of the Array
     def max(self, setOfElement):
         if len(setOfElement) != 0:
             maximum = setOfElement.pop()
