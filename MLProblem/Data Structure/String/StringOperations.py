@@ -1,8 +1,10 @@
 class String:
 
+    # Return the length of the passed String
     def length(self, givenString):
         return len(givenString)
 
+    # Return the dictionary containing the occurence of character of passed String
     def characterOccurence(self, givenString):
         character = {}
         for char in range(len(givenString)):
@@ -14,6 +16,7 @@ class String:
                 character[givenString[char]] = count
         return character
 
+    # Change the occurence of first character of the String except the First Character
     def changeFirstCharacterOccurence(self, givenString):
         target = givenString[0]
         newstring = target
@@ -24,6 +27,11 @@ class String:
                 newstring += givenString[index]
         return newstring
 
+    """
+    If the length of String is less than 3 return same string
+    Else if the string is not suffixed with 'ing' then return the string by adding 'ing' at the end
+    else if the string id suffixed with'ing' then return the string by adding 'ly' at the end
+    """
     def addSuffix(self, givenString):
         if len(givenString) < 3:
             return givenString
@@ -32,6 +40,7 @@ class String:
         else:
             return givenString + 'ly'
 
+    # Return the length of word which have largest Length in the List
     def longestWord(self, listOfWord):
         large = len(listOfWord[0])
         for index in range(len(listOfWord)):
@@ -39,9 +48,11 @@ class String:
                 large = len(listOfWord[index])
         return large
 
+    # Return the passed string in upper as well as in lower case
     def lowerAndUpper(self, givenString):
         return givenString.upper(), givenString.lower()
 
+    # Return the UNIQUE sequence of word in sorted form (alphaNumerically)
     def uniqueSorted(self, sequenceOfWord):
         listOfWord = list(set(sequenceOfWord))
         for index in range(len(listOfWord)):
@@ -52,6 +63,7 @@ class String:
                     listOfWord[ind] = temp
         return listOfWord
 
+    # Return the last part of the string based on the passed Character
     def lastPart(self, character, givenString):
         if character not in givenString:
             return None
@@ -61,6 +73,7 @@ class String:
                 index = ind
         return givenString[index:]
 
+    # Rerturn the occurence of Sub-String in the given String
     def occurenceSub_String(self, subStr, givenString):
         count = 0
         for index in range(len(givenString)):
@@ -68,12 +81,14 @@ class String:
                 count += 1
         return count
 
+    # Reverse the String
     def reverse(self, givenString):
         revString = ""
         for index in range(len(givenString)):
             revString = givenString[index] + revString
         return revString
 
+    # Return the passed String after converting first N index into LowerCase based on passed index
     def lowerFirstNCharacter(self, n, givenString):
         return givenString[:n].lower() + givenString[n:]
 
