@@ -1,12 +1,14 @@
 import array
 class Array:
 
-    def show(self,arr):
+    # To print every element of the array index wise
+    def show(arr):
         for index in range(len(arr)):
             print(arr[index],end=" ")
         print()
 
-    # def reverse(self,arr):
+    # To reverse the element of the passed Array
+    # def reverse(arr):
     #     last = len(arr)-1
     #     arrr = array.array('i',[])
     #     while last >= 0:
@@ -14,7 +16,8 @@ class Array:
     #         last -= 1
     #     return arrr
 
-    def reverse(self,arr):
+    # To reverse the element of the passed Array
+    def reverse(arr):
         index = 0
         last = len(arr)-1
         while index < len(arr)//2:
@@ -25,15 +28,17 @@ class Array:
             last -= 1
         return arr
 
-
-    def occurence(self,element,arr):
+    # To count the occurence of specified Element in the Array
+    def occurence(element,arr):
         count = 0
         for index in range(len(arr)):
             if element == arr[index]:
                 count += 1
         return count
 
-    # def removeFirstOccurence(self,element,arr):
+    # To remove the first occurence of Specified Element from an Array
+    # """ BUT NOT WORKING """
+    # def removeFirstOccurence(element,arr):
     #     for index in range(len(arr)):
     #         if element == arr[index]:
     #             aray = ([])
@@ -49,7 +54,8 @@ class Array:
     #         return aray
     #     return arr
 
-    def removeFirstOccurence(self,element,arrayOfElement):
+    # To remove the first occurence of Specified Element from an Array
+    def removeFirstOccurence(element,arrayOfElement):
         flag = 0
         newArr = array.array(arrayOfElement.typecode,[])
         for index in range(len(arrayOfElement)):

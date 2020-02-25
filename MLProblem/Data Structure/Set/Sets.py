@@ -1,30 +1,35 @@
 class Sets:
 
-    def createSet(self):
-        newSet =set({})
-        return newSet
+    #Return the Empty Set
+    def createSet():
+        return set({})
 
-    def show(self, setOfElements):
+    # Print every element of the passed Set
+    def show(setOfElements):
         for values in setOfElements:
             print(values, end=" ")
         print()
 
-    def addElement(self, element, setOfElement):
+    # Add the passed element into the Given Set
+    def addElement(element, setOfElement):
         setOfElement.add(element)
         return setOfElement
 
-    def removeItems(self, setOfElement, *element):
+    # Take element(s) and remove from the passed Set if Present
+    def removeItems(setOfElement, *element):
         for index in range(len(element)):
             if element[index] in setOfElement:
                 setOfElement.remove(element[index])
         return setOfElement
 
-    def removeMember(self, element, setOfElement):
+    # Take one element and remove it from the Set if Present
+    def removeMember(element, setOfElement):
         if element in setOfElement:
             setOfElement.remove(element)
         return setOfElement
 
-    def intersectionOfSets(self, firstSet, secondSet):
+    # Return the element which are common in both the Set
+    def intersectionOfSets(firstSet, secondSet):
         intersectionSet = set({})
         for firstvalues in firstSet:
             for secondvalues in secondSet:
@@ -32,7 +37,8 @@ class Sets:
                     intersectionSet.add(firstvalues)
         return intersectionSet
 
-    def unionOfSets(self, firstSet, secondSet):
+    # Return the elemets of both the Sets **UNION(Mathematical)**
+    def unionOfSets(firstSet, secondSet):
         unionSet = set({})
         for values in firstSet:
             unionSet.add(values)
@@ -40,7 +46,8 @@ class Sets:
             unionSet.add(values)
         return unionSet
 
-    def setDifference(self,firstSet,secondSet):
+    # Return a new set with elements in the set that are not in the others
+    def setDifference(firstSet,secondSet):
         differenceSet = set({})
         for firstValues in secondSet:
             for secondValues in firstSet:
@@ -51,27 +58,35 @@ class Sets:
         return differenceSet
 
 
-    # def symmetricDifference(self,firstSet,secondSet):
-    #     differenceSet = set({})
-    #     for firstValues in secondSet:
-    #         for secondValues in firstSet:
-    #             if firstValues == secondValues:
-    #                 break
-    #         else:
-    #             differenceSet.add(firstValues)
-    #     return differenceSet
+    def symmetricDifference(firstSet,secondSet):
+        differenceSet = set({})
+        for firstValue in secondSet:
+            for secondValue in firstSet:
+                if firstValue == secondValue:
+                    break
+            else:
+                differenceSet.add(firstValue)
+        for firstValue in firstSet:
+            for secondValue in secondSet:
+                if firstValue == secondValue:
+                    break
+            else:
+                differenceSet.add(firstValue)
+        return differenceSet
 
 
     # def frozenSet(self):
     #     pass
 
 
-    def clear(self,setOfElement):
+    # Empty the passed Set
+    def clear(setOfElement):
         while len(setOfElement) != 0:
             setOfElement.pop()
         return setOfElement
 
-    def min(self, setOfElement):
+    # Return the minimum element of the Array
+    def min(setOfElement):
         if len(setOfElement) != 0:
             minimum = setOfElement.pop()
             setOfElement.add(minimum)
@@ -82,7 +97,8 @@ class Sets:
                 minimum = values
         return minimum
 
-    def max(self, setOfElement):
+    # Return the Maximum element of the Array
+    def max(setOfElement):
         if len(setOfElement) != 0:
             maximum = setOfElement.pop()
             setOfElement.add(maximum)
@@ -99,4 +115,4 @@ class Sets:
 s = Sets()
 sets = {7, 2, 5, 4, 6, 45}
 secondSet = { 50,42,65,49,12,21,6,7,5 }
-print(s.max(sets))
+print(Sets.symmetricDifference(sets,secondSet))
