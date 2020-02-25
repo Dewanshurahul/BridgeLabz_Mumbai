@@ -25,7 +25,7 @@ class Tuple:
     firstName, lastName, age = newTuple
     print(firstName, lastName, age)
 
-    # Return repeated item(s) inside a tuple
+    # Return repeated item(s) inside a tuple\
     def repeatedItem(givenTuple):
         tempList = []
         for index in range(len(givenTuple)):
