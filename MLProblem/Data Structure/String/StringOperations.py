@@ -1,11 +1,11 @@
 class String:
 
     # Return the length of the passed String
-    def length(self, givenString):
+    def length(givenString):
         return len(givenString)
 
     # Return the dictionary containing the occurence of character of passed String
-    def characterOccurence(self, givenString):
+    def characterOccurence(givenString):
         character = {}
         for char in range(len(givenString)):
             count = 0
@@ -17,7 +17,7 @@ class String:
         return character
 
     # Change the occurence of first character of the String except the First Character
-    def changeFirstCharacterOccurence(self, givenString):
+    def changeFirstCharacterOccurence(givenString):
         target = givenString[0]
         newstring = target
         for index in range(1, len(givenString)):
@@ -27,12 +27,11 @@ class String:
                 newstring += givenString[index]
         return newstring
 
-    """
-    If the length of String is less than 3 return same string
-    Else if the string is not suffixed with 'ing' then return the string by adding 'ing' at the end
-    else if the string id suffixed with'ing' then return the string by adding 'ly' at the end
-    """
-    def addSuffix(self, givenString):
+
+    # If the length of String is less than 3 return same string
+    # Else if the string is not suffixed with 'ing' then return the string by adding 'ing' at the end
+    # else if the string id suffixed with'ing' then return the string by adding 'ly' at the end
+    def addSuffix(givenString):
         if len(givenString) < 3:
             return givenString
         if givenString[-3:] != 'ing':
@@ -41,7 +40,7 @@ class String:
             return givenString + 'ly'
 
     # Return the length of word which have largest Length in the List
-    def longestWord(self, listOfWord):
+    def longestWord(listOfWord):
         large = len(listOfWord[0])
         for index in range(len(listOfWord)):
             if large < len(listOfWord[index]):
@@ -49,11 +48,11 @@ class String:
         return large
 
     # Return the passed string in upper as well as in lower case
-    def lowerAndUpper(self, givenString):
+    def lowerAndUpper(givenString):
         return givenString.upper(), givenString.lower()
 
     # Return the UNIQUE sequence of word in sorted form (alphaNumerically)
-    def uniqueSorted(self, sequenceOfWord):
+    def uniqueSorted(sequenceOfWord):
         listOfWord = list(set(sequenceOfWord))
         for index in range(len(listOfWord)):
             for ind in range(index, len(listOfWord)):
@@ -64,7 +63,7 @@ class String:
         return listOfWord
 
     # Return the last part of the string based on the passed Character
-    def lastPart(self, character, givenString):
+    def lastPart(character, givenString):
         if character not in givenString:
             return None
         index = -1
@@ -74,7 +73,7 @@ class String:
         return givenString[index:]
 
     # Rerturn the occurence of Sub-String in the given String
-    def occurenceSub_String(self, subStr, givenString):
+    def occurenceSub_String(subStr, givenString):
         count = 0
         for index in range(len(givenString)):
             if subStr == givenString[index:index + len(subStr)]:
@@ -82,18 +81,17 @@ class String:
         return count
 
     # Reverse the String
-    def reverse(self, givenString):
+    def reverse(givenString):
         revString = ""
         for index in range(len(givenString)):
             revString = givenString[index] + revString
         return revString
 
     # Return the passed String after converting first N index into LowerCase based on passed index
-    def lowerFirstNCharacter(self, n, givenString):
-        return givenString[:n].lower() + givenString[n:]
+    def lowerFirstNCharacter(upto, givenString):
+        return givenString[:upto].lower() + givenString[upto:]
 
 
-s = String()
 # string = ["zdew","fdedwa","dewanshu","nikhil","zdew"]
 string = "RAHUL"
-print(s.lowerFirstNCharacter(3, string))
+print(String.lowerFirstNCharacter(3, string))
